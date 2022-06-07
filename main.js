@@ -274,13 +274,16 @@ displayCountries(countryList);
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-	let mybutton = document.getElementById("backToTop");
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    mybutton.style.display = "block";
-  } else {
+	let mybutton = document.getElementsByClassName("backToTop")[0];
+if (document.body.scrollTop > 500|| document.documentElement.scrollTop >500 ) {
+	mybutton.style.display = "block";
+	//   mybutton.classList.add('top')
+} else {
     mybutton.style.display = "none";
-  }
+    }
 }
+
+
 
 // function to display the countries onto the screen
 function displayCountries(country){
@@ -369,7 +372,6 @@ function startingWordState(){
 		if(elementLowerCase.startsWith(input.value.toLowerCase())){
 			return true
 		}
-		
 	})
 	console.log(result)
 	countriesContainer.innerHTML = ''
@@ -378,9 +380,7 @@ function startingWordState(){
 	startingWith.innerHTML = input.value
 	let startingWithNum = document.getElementsByClassName('startingWithNum')[0]
 	startingWithNum.innerHTML = result.length
-
 	displayCountries(result)
-	
 	return
 }
 
@@ -391,8 +391,18 @@ let modeToggle = document.getElementById('modeToggle').addEventListener('click',
 })
 
 
-
 // modeLight.addEventListener('click', changeLightMode)
+
+
+window.addEventListener("keypress", function (e) {
+	if (e.key == "Enter") {
+	alert("Hello World");
+}
+});
+
+
+
+
 
 
 
